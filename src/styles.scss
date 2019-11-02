@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Electrolize|Gruppo|Orbitron|Oswald|Saira+Semi+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Gruppo|Iceland|Major+Mono+Display|Megrim|Orbitron&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  color: white;
+  background-color: #2b2b2b;
+  font-family: Orbitron, monospace;
+
+
+  //font-family: 'Oswald', sans-serif;
+  //font-family: 'Gruppo', cursive;
+  //font-family: 'Orbitron', sans-serif;
+  //font-family: 'Audiowide', cursive;
+  //font-family: 'Megrim', cursive;
+  //font-family: 'Iceland', cursive;
+  //font-family: 'Major Mono Display', monospace;
+}
