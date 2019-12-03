@@ -1,22 +1,10 @@
 <div id="wrapper">
-
-  <!-- Header -->
-  <header id="header" class="alt">
-      <a class="logo"><strong>PETER </strong><span>BAIER</span></a>
-      <i class="fas fa-bars"></i>
-  </header>
-
-  <div class="dropdown">
-    <ul>
-    <li>a dad</li>
-    <li>a husband</li>
-    <li>a software engineer</li>
-    <li>a runner</li>
-    </ul>
+  <div id="header">
+    <a class="logo"><strong>PETER </strong><span>BAIER</span></a>
+    <app-menu-bar></app-menu-bar>
   </div>
 
-  <!-- Banner -->
-  <section id="banner">
+  <div id="banner">
     <div class="inner">
       <div class="my-name-is">
         <h1>Hi, my name is Peter</h1>
@@ -25,53 +13,51 @@
         <p>A full-stack software engineer<br/>
           and a hopeless dreamer.</p>
       </div>
+<!--      <img src="../assets/background_transparent.png">-->
     </div>
-  </section>
+  </div>
 
+  <div id="contact">
 
-  <!-- Contact -->
-  <section id="contact">
-    <form method="post" action="#">
+    <form [formGroup]="form" *ngIf="form !== null">
+      <p>Don’t be a stranger,<span> just say hello.</span></p>
 
       <div class="fields">
-        <div class="field half">
-          <label for="name">Name</label>
-          <input type="text" name="name" id="name"/>
-        </div>
+        <mat-form-field id="message">
+          <textarea matInput placeholder="Hi Peter," formControlName="message"></textarea>
 
-        <div class="field half">
-          <label for="email">Email</label>
-          <input type="text" name="email" id="email"/>
-        </div>
+          <mat-error *ngIf="form.controls['message'].invalid && form.controls['message'].errors['required']">
+            Empty message!
+          </mat-error>
+        </mat-form-field>
 
-        <div class="field">
-          <label for="message">Message</label>
-          <textarea name="message" id="message" rows="6"></textarea>
-        </div>
+        <mat-form-field>
+          <input matInput placeholder="Email" formControlName="email">
+
+          <mat-error *ngIf="form.controls['email'].invalid && form.controls['email'].errors['required']">
+            Please provide your Email!
+          </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button
+                [disabled]="form.pristine || form.invalid" color="primary">Send
+        </button>
       </div>
 
-      <ul class="actions">
-        <li><input type="submit" value="Send Message" class="primary"/></li>
-        <li><input type="reset" value="Clear"/></li>
-      </ul>
-
     </form>
-  </section>
+    <i class="fas fa-twitter"></i>
+    <i class="fas fa-facebook-f"></i>
+    <i class="fas fa-instagram"></i>
+    <i class="fas fa-linkedin-in"></i>
+    <i class="fas fa-github"></i>
+    <footer id="footer">
+      <div class="inner">
+        <ul class="copyright">
+          <li>&copy; BAIER.TECH</li>
+        </ul>
+      </div>
+    </footer>
+  </div>
 
-  <!-- Footer -->
-  <footer id="footer">
-    <div class="inner">
-      <ul class="icons">
-        <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-        <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-        <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-        <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-      </ul>
-      <ul class="copyright">
-        <li>&copy; BAIER.TECH</li>
-      </ul>
-    </div>
-  </footer>
 
 </div>
