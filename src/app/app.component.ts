@@ -23,6 +23,9 @@ export class AppComponent implements OnInit, AfterViewInit {
             email: new FormControl('', [Validators.required, Validators.email]),
             message: new FormControl('', [Validators.required]),
         });
+
+        const node = document.querySelector('.particle');
+        [...Array(200)].forEach(_ => node.parentNode.insertBefore(node.cloneNode(true), node));
     }
 
     openMenu() {
