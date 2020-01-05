@@ -13,15 +13,16 @@ import { MatSnackBar } from '@angular/material';
 export class AppComponent implements OnInit {
     form: FormGroup;
     sendingEmail = false;
+    emptyForm = this.formBuilder.group({
+        email: new FormControl('', [Validators.required, Validators.email]),
+        message: new FormControl('', [Validators.required]),
+    });
 
     constructor(private readonly formBuilder: FormBuilder, private snackBar: MatSnackBar) {
     }
 
     ngOnInit(): void {
-        this.form = this.formBuilder.group({
-            email: new FormControl('', [Validators.required, Validators.email]),
-            message: new FormControl('', [Validators.required]),
-        });
+        this.form = this.emptyForm;
     }
 
     onSubmit() {
@@ -35,6 +36,8 @@ export class AppComponent implements OnInit {
             .then((response) => {
                 console.log('SUCCESS!', response.status, response.text);
                 this.handleResponse('Email has been sent successfully!');
+                this.form.controls.email.setValue('');
+                this.form.controls.message.setValue('');
             }, (err) => {
                 console.log('FAILED...', err);
                 this.handleResponse('Email has failed, please try to send it again!');
@@ -50,4 +53,6 @@ export class AppComponent implements OnInit {
             politeness: 'polite'
         });
     }
+
+
 }
