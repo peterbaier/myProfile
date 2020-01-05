@@ -6,19 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu-bar.component.scss']
 })
 export class MenuBarComponent implements OnInit {
+  menuTitle = 'About';
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  toggleMenu(){
-    const menu = document.getElementById("about");
+  toggleMenu() {
+    this.menuTitle = this.menuTitle === 'About' ? 'I am' : 'About';
+    const menu = document.getElementById('about');
 
-    if(!(menu.classList.contains('active-menu'))){
-      menu.classList.toggle("active-menu");
+    if (!(menu.classList.contains('active-menu'))) {
+      menu.classList.toggle('active-menu');
     } else {
-      menu.classList.remove("active-menu");
+      menu.classList.remove('active-menu');
     }
   }
 

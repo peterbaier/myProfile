@@ -19,7 +19,7 @@
 
   <div id="contact">
 
-    <form [formGroup]="form" *ngIf="form !== null">
+    <form [formGroup]="form" *ngIf="form !== null" (ngSubmit)="onSubmit()">
       <p>Don’t be a stranger,<span> just say hello.</span></p>
 
       <div class="fields">
@@ -39,25 +39,23 @@
           </mat-error>
         </mat-form-field>
 
-        <button mat-raised-button
+        <button mat-raised-button type="submit"
                 [disabled]="form.pristine || form.invalid" color="primary">Send
         </button>
       </div>
 
     </form>
-    <i class="fas fa-twitter"></i>
-    <i class="fas fa-facebook-f"></i>
-    <i class="fas fa-instagram"></i>
-    <i class="fas fa-linkedin-in"></i>
-    <i class="fas fa-github"></i>
-    <footer id="footer">
-      <div class="inner">
-        <ul class="copyright">
-          <li>&copy; BAIER.TECH</li>
-        </ul>
+    <div class="footer">
+      <div class="social">
+        <i class="fab fa-twitter social-icon"></i>
+        <i class="fab fa-flickr social-icon"></i>
+        <i class="fab fa-instagram social-icon"></i>
+        <i class="fab fa-linkedin-in social-icon"></i>
+        <i class="fab fa-github social-icon"></i>
       </div>
-    </footer>
+      <div class="site">
+        <span>&copy; BAIER.TECH</span>
+      </div>
+    </div>
   </div>
-
-
 </div>
