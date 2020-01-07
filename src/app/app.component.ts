@@ -44,6 +44,10 @@ export class AppComponent implements OnInit {
             });
     }
 
+    goTo(url: string) {
+        window.location.href = url;
+    }
+
     private handleResponse(message: string) {
         this.sendingEmail = false;
 
@@ -53,6 +57,4 @@ export class AppComponent implements OnInit {
             politeness: 'polite'
         });
     }
-
-
 }

@@ -13,7 +13,7 @@
         <p>A full-stack software engineer<br/>
           and a hopeless dreamer.</p>
       </div>
-<!--      <img src="../assets/background_transparent.png">-->
+      <!--      <img src="../assets/background_transparent.png">-->
     </div>
   </div>
 
@@ -47,11 +47,24 @@
     </form>
     <div class="footer">
       <div class="social">
-        <i class="fab fa-twitter social-icon"></i>
-        <i class="fab fa-flickr social-icon"></i>
-        <i class="fab fa-instagram social-icon"></i>
-        <i class="fab fa-linkedin-in social-icon"></i>
-        <i class="fab fa-github social-icon"></i>
+        <button mat-icon-button aria-label="Twitter" (click)="goTo('https://twitter.com/ptrbaier')">
+          <i class="fab fa-twitter social-icon"></i>
+        </button>
+
+        <button mat-icon-button aria-label="Dev" (click)="goTo('https://dev.to/peterbaier')">
+          <i class="fab fa-dev social-icon"></i>
+        </button>
+
+        <button mat-icon-button aria-label="Flickr" (click)="goTo('https://www.flickr.com/photos/baier-photography/')">
+          <i class="fab fa-flickr social-icon"></i>
+        </button>
+
+        <button mat-icon-button aria-label="Github" (click)="goTo('https://github.com/peterbaier')">
+          <i class="fab fa-github social-icon"></i>
+        </button>
+        <button mat-icon-button aria-label="LinkedIn" (click)="goTo('https://www.linkedin.com/in/peterbaier/')">
+          <i class="fab fa-linkedin-in social-icon"></i>
+        </button>
       </div>
       <div class="site">
         <span>&copy; BAIER.TECH</span>
