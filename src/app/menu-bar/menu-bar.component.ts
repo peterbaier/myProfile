@@ -24,4 +24,7 @@ export class MenuBarComponent implements OnInit {
     }
   }
 
+  scrollToContact() {
+    window.scrollTo({ top: window.innerHeight, behavior: 'smooth'});
+  }
 }
