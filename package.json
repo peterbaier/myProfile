@@ -7,6 +7,7 @@
     "start": "npm run config && ng serve",
     "start-docker": "npm run config && ng serve --host 0.0.0.0",
     "build": "npm run config && ng build",
+    "build-prod": "npm run config && ng build --prod",
     "test": "npm run config && ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
