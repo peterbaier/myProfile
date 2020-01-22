@@ -15,11 +15,13 @@ import {
     MatSnackBarModule
 } from '@angular/material';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
+import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        MenuBarComponent
+        MenuBarComponent,
+        MobileMenuComponent,
     ],
     imports: [
         BrowserModule,

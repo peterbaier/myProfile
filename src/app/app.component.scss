@@ -5,11 +5,14 @@
 #header {
   background-color: transparent;
   width: 100%;
-  height: 4vh;
+  height: 5vh;
   display: flex;
   justify-content: space-between;
-  z-index: 100;
+  z-index: 10;
   position: fixed;
+  transition: background-color;
+  transition-timing-function: ease-in;
+  transition-duration: 500ms;
 
   .logo {
     animation-duration: 4s;
@@ -30,7 +33,7 @@
       margin-left: 5px;
     }
 
-    @media screen and (max-width: 666px){
+    @media screen and (max-width: 666px) {
       font-size: 1em;
     }
   }
@@ -110,14 +113,10 @@
   //background: url("../assets/background_large.jpg") no-repeat fixed;
   //background-size: cover;
   background-image: linear-gradient(to bottom, rgb(43, 43, 43), rgb(45, 57, 62), rgb(47, 70, 82), rgb(49, 84, 101), rgb(51, 97, 120), rgb(53, 111, 139), rgb(56, 124, 159), rgb(58, 138, 178), rgb(60, 151, 197), rgb(62, 165, 216), rgb(64, 178, 236), rgb(66, 192, 255));
-  animation-name: logo;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-
+background-attachment: fixed;
   .inner {
     animation-name: inner-banner;
     animation-duration: 2s;
-    animation-delay: 1.5s;
     animation-fill-mode: forwards;
     height: 40vh;
     width: 60vw;

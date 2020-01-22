@@ -1,0 +1,22 @@
+<div class="menu" id="menu">
+  <nav class="nav">
+    <div class="button-container">
+      <button id="button" mat-icon-button (click)="toggleMenu()">
+        <i *ngIf="!isMenuOpen else close" class="fas fa-bars"></i>
+        <ng-template #close>
+          <i class="far fa-times-circle"></i>
+        </ng-template>
+      </button>
+    </div>
+
+    <div class="menu-content">
+      <ul>
+        <li><a href="">a dad</a></li>
+        <li><a href="">a husband</a></li>
+        <li><a href="https://dev.to/peterbaier">a software engineer</a></li>
+        <li><a href="https://www.flickr.com/photos/baier-photography/">a photographer</a></li>
+        <li><a href="">a runner</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>

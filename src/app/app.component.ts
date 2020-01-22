@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import * as emailjs from 'emailjs-com';
@@ -13,6 +13,7 @@ import { MatSnackBar } from '@angular/material';
 export class AppComponent implements OnInit {
     form: FormGroup;
     sendingEmail = false;
+    isMobileView = false;
     emptyForm = this.formBuilder.group({
         email: new FormControl('', [Validators.required, Validators.email]),
         message: new FormControl('', [Validators.required]),
@@ -23,6 +24,7 @@ export class AppComponent implements OnInit {
 
     ngOnInit(): void {
         this.form = this.emptyForm;
+        this.isMobileView = window.innerWidth <= 666;
     }
 
     onSubmit() {
@@ -56,5 +58,14 @@ export class AppComponent implements OnInit {
             verticalPosition: 'top',
             politeness: 'polite'
         });
+    }
+
+    @HostListener('window:scroll', [])
+    onWindowScroll() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById('header').style.backgroundColor = '#2b2e2f';
+                } else {
+                    document.getElementById('header').style.backgroundColor = 'transparent';
+                }
     }
 }

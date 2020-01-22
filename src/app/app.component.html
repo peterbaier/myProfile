@@ -1,7 +1,8 @@
 <div id="wrapper">
   <div id="header">
     <a class="logo"><strong>PETER </strong><span>BAIER</span></a>
-    <app-menu-bar></app-menu-bar>
+    <app-menu-bar *ngIf="!isMobileView"></app-menu-bar>
+    <app-mobile-menu *ngIf="isMobileView"></app-mobile-menu>
   </div>
 
   <div id="banner">
@@ -13,7 +14,6 @@
         <p>A full-stack software engineer<br/>
           and a hopeless dreamer.</p>
       </div>
-      <!--      <img src="../assets/background_transparent.png">-->
     </div>
   </div>
 
